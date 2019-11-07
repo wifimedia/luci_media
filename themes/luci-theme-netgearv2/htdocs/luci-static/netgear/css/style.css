@@ -11,41 +11,6 @@
  *  Font generate by Icomoon<icomoon.io>  Advancetomato
  */
 
-@font-face {
-    font-family: 'Roboto';
-    src: local('Roboto Medium'), local('Roboto-Medium'), url('../fonts/Roboto-Medium-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: local('Roboto'), local('Roboto Regular'), local('Roboto-Regular'), url('../fonts/Roboto-Regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'icomoon';
-    src: url('../fonts/font.eot');
-    src: url('../fonts/font.eot') format('embedded-opentype'),
-    url('../fonts/font.ttf') format('truetype'),
-    url('../fonts/font.woff') format('woff'),
-    url('../fonts/font.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "advancedtomato";
-    src:url("../fonts/advancedtomato.eot");
-    src:url("../fonts/advancedtomato.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/advancedtomato.woff") format("woff"),
-        url("../fonts/advancedtomato.ttf") format("truetype"),
-        url("../fonts/advancedtomato.svg#advancedtomato") format("svg");
-    font-weight: normal;
-    font-style: normal;
-
-}
 
  
 .cbi-button-up,
@@ -197,9 +162,9 @@ footer > a {
     font-variant: normal !important;
     text-transform: none !important;
 }
-
+/*
 .myIcon-logout:after{
-	content: "\e005";
+	/content: "\e005";
 }
 
 .myIcon-reboot:after{
@@ -209,7 +174,7 @@ footer > a {
 .myIcon-wifi:after{
 	content: "\e00c";
 }
-
+*/
 .main {
     top: 4rem;
     bottom: 0rem;
@@ -237,7 +202,7 @@ footer > a {
 }
 
 .main > .loading > span > .loading-img:before {
-    content: "\e603";
+    /*content: "\e603";*/
 }
 
 .main > .loading > span > .loading-img {
@@ -443,7 +408,7 @@ header > .container > .brand-hostname {
 	padding-top:6px;
 }
 .main > .main-left > .nav > .slide > a[data-title="Status"]:before {
-    content: "\e026";
+    /*content: "\e026";*/
     display: inline-block;
     top: -1px;
     left:-10px;
@@ -478,36 +443,36 @@ header > .container > .brand-hostname {
 
 
 .main > .main-left > .nav > .slide > a[data-title="Status"]:before {
-    content: "\e026";
+    /*content: "\e026";*/
 }
 
 .main > .main-left > .nav > .slide > a[data-title="System"]:before {
-    content: "\e01c";
+    /*content: "\e01c";*/
 }
 
 .main > .main-left > .nav > .slide > a[data-title="Network"]:before {
-    content: "\e00e";
+    /*content: "\e00e";*/
 }
 .main > .main-left > .nav > .slide > a[data-title="Usbapps"]:before {
-    content: "\e00b";
+    /*content: "\e00b";*/
 }
 .main > .main-left > .nav > .slide > a[data-title="Services"]:before {
-    content: "\e029";
+    /*content: "\e029";*/
 }
 .main > .main-left > .nav > .slide > a[data-title="Bandwidth Monitor"]:before {
-    content: "\e00f";
+    /*content: "\e00f";*/
 }
 .main > .main-left > .nav > .slide > a[data-title="NAS"]:before {
-    content: "\e00b";
+    /*content: "\e00b";*/
 }
 .main > .main-left > .nav > .slide > a[data-title="VPN"]:before {
-    content: "\e015";
+    /*content: "\e015";*/
 }
 .main > .main-left > .nav > li > a[data-title="Logout"] {
     padding: 10px 35px;
 }
 .main > .main-left > .nav > li > a[data-title="Logout"]:before {
-    content: "\e005";
+    /*content: "\e005";*/
     display: inline-block;
     top: -1px;
     left:-10px;
@@ -528,7 +493,7 @@ header > .container > .brand-hostname {
     padding: 10px 35px;
 }
 .main > .main-left > .nav > li > a[data-title="Reboot"]:before {
-    content: "\e004";
+   /* content: "\e004";*/
     display: inline-block;
     top: -1px;
     left:-10px;
@@ -605,7 +570,7 @@ header > .container > .brand-hostname {
     font-style: normal !important;
     font-weight: normal !important;
     font-variant: normal !important;
-	content: "\e001";
+	/*content: "\e001";*/
 	float: right;
 	padding-right: 5px;
 }
@@ -980,7 +945,7 @@ form.inline + form.inline,
 }
 
 .cbi-value-helpicon:before {
-    content: "\f059";
+    /*content: "\f059";*/
 }
 
 .cbi-value-description {
@@ -1318,7 +1283,7 @@ header > .container > .pull-right > * {
 .showSide:before {
     display:none;
     color:#76838f;
-    content: "\e029";
+    /*content: "\e029";*/
     font-family: "advancedtomato" !important;
     font-weight: normal !important;
     font-size:14px;
@@ -1638,7 +1603,7 @@ body.lang_pl.node-main-login .cbi-value-title {
     }
 
     .showSide:before {
-        content: "\e20e";
+       /* content: "\e20e";*/
         font-size: 1.7rem;
     }
 
