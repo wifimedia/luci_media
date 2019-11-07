@@ -28,9 +28,10 @@
 %>
                 </div>
                 <footer class="mobile-hide" style="text-align:center">
-                    <a href="https://github.com/openwrt/luci">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)</a> /
-                    <a href="https://www.lede-project.org/"><%= ver.distversion %></a> /
-					<a href="mailto:tracemouse@163.com">Tracemouse(theme)</a>
+                    <a href="https://wifimedia.vn"> WIFIMEIA.VN | APID:<%=luci.sys.exec("ifconfig eth0 | grep 'HWaddr' | awk '{ print $5 }' | sed 's/:/-/g' | tr a-z A-Z")%>
+						<br/><font color="red"><% if first_time then %>License:<%=luci.sys.exec("cat /etc/opt/license/status")%><% end %></font>
+					</a>
+
                     <% if #categories > 1 then %>
                     <ul class="breadcrumb pull-right" id="modemenu">
                         <% for i, r in ipairs(categories) do %>
