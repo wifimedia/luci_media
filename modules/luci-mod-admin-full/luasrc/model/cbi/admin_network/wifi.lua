@@ -273,10 +273,6 @@ mode:value("ap", translate("Access Point"))
 mode:value("sta", translate("Client"))
 mode:value("adhoc", translate("Ad-Hoc"))
 
-maxassoc = s:taboption("general", Value, "maxassoc", translate("Max Clients"))
-maxassoc:depends({mode="ap"})
-maxassoc:depends({mode="ap-wds"})
-	
 meshid = s:taboption("general", Value, "mesh_id", translate("Mesh Id"))
 meshid:depends({mode="mesh"})
 
@@ -297,6 +293,11 @@ ssid:depends({mode="sta-wds"})
 ssid:depends({mode="wds"})
 
 bssid = s:taboption("general", Value, "bssid", translate("<abbr title=\"Basic Service Set Identifier\">BSSID</abbr>"))
+
+maxassoc = s:taboption("general", Value, "maxassoc", translate("Max Clients"))
+maxassoc:depends({mode="ap"})
+maxassoc:depends({mode="ap-wds"})
+
 
 network = s:taboption("general", Value, "network", translate("Network"),
 	translate("Choose the network(s) you want to attach to this wireless interface or " ..
@@ -391,10 +392,11 @@ if hwtype == "mac80211" then
 			return mode
 		end
 	end
+	--[[
 	maxassoc = s:taboption("general", Value, "maxassoc", translate("Max Clients"))
 	maxassoc:depends({mode="ap"})
 	maxassoc:depends({mode="ap-wds"})
-	
+	]]--
 	hidden = s:taboption("general", Flag, "hidden", translate("Hide <abbr title=\"Extended Service Set Identifier\">ESSID</abbr>"))
 	hidden:depends({mode="ap"})
 	hidden:depends({mode="ap-wds"})
