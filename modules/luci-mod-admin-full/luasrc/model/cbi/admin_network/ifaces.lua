@@ -139,7 +139,7 @@ if m:formvalue("cbid.dhcp._enable._enable") then
 		interface = arg[1],
 		start     = "100",
 		limit     = "150",
-		leasetime = "12h"
+		leasetime = "1h"
 	})
 
 	m.uci:save("dhcp")

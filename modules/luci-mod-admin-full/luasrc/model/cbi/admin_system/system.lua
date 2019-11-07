@@ -106,46 +106,6 @@ o:value(9, translate("Warning"))
 
 
 --
--- Langauge & Style
---
-
-o = s:taboption("language", ListValue, "_lang", translate("Language"))
-o:value("auto")
-
-local i18ndir = luci.i18n.i18ndir .. "base."
-for k, v in luci.util.kspairs(conf.languages) do
-	local file = i18ndir .. k:gsub("_", "-")
-	if k:sub(1, 1) ~= "." and fs.access(file .. ".lmo") then
-		o:value(k, v)
-	end
-end
-
-function o.cfgvalue(...)
-	return m.uci:get("luci", "main", "lang")
-end
-
-function o.write(self, section, value)
-	m.uci:set("luci", "main", "lang", value)
-end
-
-
-o = s:taboption("language", ListValue, "_mediaurlbase", translate("Design"))
-for k, v in pairs(conf.themes) do
-	if k:sub(1, 1) ~= "." then
-		o:value(v, k)
-	end
-end
-
-function o.cfgvalue(...)
-	return m.uci:get("luci", "main", "mediaurlbase")
-end
-
-function o.write(self, section, value)
-	m.uci:set("luci", "main", "mediaurlbase", value)
-end
-
-
---
 -- NTP
 --
 
@@ -155,7 +115,7 @@ if has_ntpd then
 	if m:formvalue("cbid.system._timeserver._enable") then
 		m.uci:section("system", "timeserver", "ntp",
 			{
-                	server = { "0.openwrt.pool.ntp.org", "1.openwrt.pool.ntp.org", "2.openwrt.pool.ntp.org", "3.openwrt.pool.ntp.org" }
+                	server = { "0.asia.pool.ntp.org", "2.asia.pool.ntp.org", "3.vn.pool.ntp.org" }
 			}
 		)
 
