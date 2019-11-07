@@ -170,13 +170,14 @@ if has_ntpd then
 		o = s:option(Flag, "enable_server", translate("Provide NTP server"))
 		o:depends("enable", "1")
 
-
+		--[[ remove list server candidates 
 		o = s:option(DynamicList, "server", translate("NTP server candidates"))
 		o.datatype = "host(0)"
 		o:depends("enable", "1")
 
 		-- retain server list even if disabled
 		function o.remove() end
+		]]--
 
 	end
 end
