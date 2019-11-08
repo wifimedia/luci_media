@@ -146,7 +146,7 @@
 <header>
 	<div class="container">
 		<span class="showSide"></span>
-		<a class="brand" href="#">WIFIMEDIA</a>
+		<a class="brand" href="#">LOOP Smart POS</a>
 		<div class="pull-right">
 		<%
 		-- calculate the number of unsaved changes
@@ -232,7 +232,7 @@
 				 <%- if luci.sys.process.info("uid") == 0 and luci.sys.user.getuser("root") and not luci.sys.user.getpasswd("root") then -%>
 					 <div class="alert-message warning">
 						 <h4><%:No password set!%></h4>
-						 <%:There is no password set on this router. Please configure a root password to protect the web interface and enable SSH.%><br>
+						 <%:There is no password set on this router.%><br>
 						 <a href="<%=pcdata(luci.dispatcher.build_url("admin/system/admin"))%>"><%:Go to password configuration...%></a>
 					 </div>
 				 <%- end -%>
