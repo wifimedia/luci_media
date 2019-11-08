@@ -25,6 +25,9 @@
 	local category = request[1]
 	local tree = disp.node()
 	local categories = disp.node_childs(tree)
+	local fs = require "nixio.fs"
+	local first_time = fs.access("/etc/opt/first_time.txt")
+
 %>
                 </div>
                 <footer class="mobile-hide" style="text-align:center">
