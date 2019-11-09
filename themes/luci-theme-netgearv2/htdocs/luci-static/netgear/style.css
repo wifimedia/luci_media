@@ -273,7 +273,7 @@ header > .container > .brand {
 	/*font-weight:bold;*/
     line-height:60px;
     /*color: white;*/
-	/*color:rgb(111,42,142);
+	color:rgb(111,42,142);
     cursor: default;
     /*background: rgb(148,143,225);*/
     display:block;
@@ -526,12 +526,12 @@ header > .container > .brand-hostname {
 .main > .main-left > .nav > li:hover,
 .main > .main-left > .nav > .slide > .menu:hover {
     /*background: rgb(133,129,216);*/
-	background:#3B5998;				 
+      background:#4267b2;
 	color:white;
 }
 .main > .main-left > .nav > .slide > .menu2:hover {
     /*background: rgb(133,129,216);*/
-	background:#3B5998;			 
+	background:#4267b2;
 	color:white;
 }
 
@@ -557,7 +557,7 @@ header > .container > .brand-hostname {
 
 .main > .main-left > .nav > .slide > .slide-menu > .active {
     /*background-color: rgb(133,129,216);*/
-	background-color:#4267b2;					  
+	background-color:#4267b2;
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > li > a {
@@ -589,13 +589,13 @@ header > .container > .brand-hostname {
 
 .main > .main-left > .nav > .slide > .slide-menu > li:hover {
     /*background: rgb(133,129,216);*/
-	background:#4267b2;			
+	background:#4267b2;
 	color:white !important;
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > .active:hover {
     /*background-color: rgb(133,129,216);*/
-	background:#4267b2;		
+	background:#4267b2;
     cursor: pointer;
 }
 
@@ -608,16 +608,14 @@ li {
 }
 
 h1 {
-	/*color:rgb(133,129,216);*/
-	color:#4267b2;
+	color:rgb(133,129,216);
     font-size: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
 }
 
 h2 {
-	/*color:rgb(133,129,216);*/
-	color:#4267b2;
+	color:rgb(133,129,216);
     margin: 15px 0 0 0;
     font-size: 16px;
     padding-bottom: 10px;
@@ -625,8 +623,7 @@ h2 {
 }
 
 h3 {
-	/*color:rgb(133,129,216);*/
-	color:#4267b2;
+	color:rgb(133,129,216);
     margin: 5px 0 0 0;
     font-size: 10pt;
     padding-bottom: 10px;
@@ -791,8 +788,7 @@ td > table > tbody > tr > td {
     color: #fff;
     outline: 0;
     text-decoration: none;
-	/*background-color: rgb(106,101,214);*/
-	background-color:#365899;
+	background-color: rgb(106,101,214);
 }
 
 .cbi-button:hover,
@@ -859,8 +855,7 @@ form.inline + form.inline,
 .cbi-button-apply,
 .cbi-button-edit {
     color: #fff !important;
-    /*background-color: rgb(148,143,225);*/
-	background-color:#232F3E;
+    background-color: rgb(148,143,225);
 }
 
 .cbi-input-reset,
@@ -1585,7 +1580,7 @@ body.lang_pl.node-main-login .cbi-value-title {
     }
 
     header > .container > .brand {
-        font-size: 15px;
+        font-size: 18px;
         height: 3.5rem;
         line-height: 3.5rem;
         width: calc(0% + 15rem);
