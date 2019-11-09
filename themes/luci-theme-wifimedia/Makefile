@@ -6,7 +6,7 @@
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=Netgear Theme
+LUCI_TITLE:=Wifimedia Theme
 LUCI_DEPENDS:=
 
 include $(TOPDIR)/feeds/luci/luci.mk
