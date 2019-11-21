@@ -191,13 +191,13 @@ refresh.placeholder = "30s"
 refresh:value("30s", translate("30s - refresh twice per minute for reasonably current stats"))
 refresh:value("5m", translate("5m - rarely refresh to avoid frequently clearing conntrack counters"))
 
-
+--[[
 directory = s:taboption("advanced", Value, "database_directory", translate("Database directory"),
 	translate("Database storage directory. One file per accounting period will be placed into this directory."))
 
 directory.placeholder = "/var/lib/nlbwmon"
 
-
+]]--
 protocols = s:taboption("protocol", TextValue, "_protocols")
 protocols.rows = 50
 
