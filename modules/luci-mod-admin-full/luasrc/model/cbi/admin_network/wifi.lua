@@ -714,7 +714,7 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 	r0_key_lifetime.placeholder = "10000"
 	r0_key_lifetime.datatype = "uinteger"
 	r0_key_lifetime.rmempty = true
-]]--
+
 	r1_key_holder = s:taboption("encryption", Value, "r1_key_holder",
 			translate("R1 Key Holder"),
 			translate("6-octet identifier as a hex string - no colons"))
@@ -722,7 +722,7 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 	r1_key_holder.placeholder = "00004f577274"
 	r1_key_holder.datatype = "and(hexstring,rangelength(12,12))"
 	r1_key_holder.rmempty = true
-
+]]--
 	pmk_r1_push = s:taboption("encryption", Flag, "pmk_r1_push", translate("PMK R1 Push"))
 	pmk_r1_push:depends({ieee80211r="1", ft_psk_generate_local=""})
 	pmk_r1_push.placeholder = "0"
@@ -891,7 +891,9 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 end
 
 -- ieee802.11w options
+
 if hwtype == "mac80211" then
+	--[[
 	local has_80211w = (os.execute("hostapd -v11w 2>/dev/null || hostapd -veap 2>/dev/null") == 0)
 	if has_80211w then
 		ieee80211w = s:taboption("encryption", ListValue, "ieee80211w",
@@ -929,7 +931,7 @@ if hwtype == "mac80211" then
 		retry_timeout.placeholder = "201"
 		retry_timeout.rmempty = true
 	end
-
+	]]--
 	local key_retries = s:taboption("encryption", Flag, "wpa_disable_eapol_key_retries",
 		translate("Enable key reinstallation (KRACK) countermeasures"),
 		translate("Complicates key reinstallation attacks on the client side by disabling retransmission of EAPOL-Key frames that are used to install keys. This workaround might cause interoperability issues and reduced robustness of key negotiation especially in environments with heavy traffic load."))
