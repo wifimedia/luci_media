@@ -8,7 +8,7 @@ m = Map("ahcpd", translate("AHCP Server"), translate("AHCP is an autoconfigurati
 
 
 m:section(SimpleSection).template = "ahcp_status"
-
+m.apply_on_parse = true
 s = m:section(TypedSection, "ahcpd")
 s:tab("general", translate("General Setup"))
 s:tab("advanced", translate("Advanced Settings"))

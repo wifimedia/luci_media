@@ -41,6 +41,7 @@ local basicParams = {
 
 
 local m = Map("openvpn")
+m.apply_on_parse = true
 local p = m:section( SimpleSection )
 
 p.template = "openvpn/pageswitch"

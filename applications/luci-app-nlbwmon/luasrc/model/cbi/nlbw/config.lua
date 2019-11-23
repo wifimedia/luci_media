@@ -11,7 +11,7 @@ local s, m, period, warning, date, days, interval, ifaces, subnets, limit, preal
 
 m = Map("nlbwmon", translate("Netlink Bandwidth Monitor - Configuration"),
 	translate("The Netlink Bandwidth Monitor (nlbwmon) is a lightweight, efficient traffic accounting program keeping track of bandwidth usage per host and protocol."))
-
+m.apply_on_parse = true
 nw.init(luci.model.uci.cursor_state())
 
 s = m:section(TypedSection, "nlbwmon")

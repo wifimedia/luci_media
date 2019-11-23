@@ -13,6 +13,7 @@ if not nixio.fs.access(adbinput) then
 end
 
 m = SimpleForm("input", nil)
+m.apply_on_parse = true
 m:append(Template("adblock/config_css"))
 m.submit = translate("Save")
 m.reset = false
