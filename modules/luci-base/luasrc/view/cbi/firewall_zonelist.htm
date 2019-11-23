@@ -78,16 +78,6 @@
 	</li>
 	<% end end %>
 
-	<% if self.widget ~= "checkbox" and not self.nocreate then %>
-	<li style="padding:0.5em">
-		<input class="cbi-input-radio" data-update="click change" type="radio"<%=attr("id", cbid .. "_new") .. attr("name", cbid) .. attr("value", "-") .. ifattr(not selected, "checked", "checked")%> /> &#160;
-		<label<%=attr("for", cbid .. "_new")%>></label>
-		<div onclick="document.getElementById('<%=cbid%>_new').checked=true" class="zonebadge" style="background-color:<%=fwm.zone.get_color()%>">
-			<em><%:unspecified -or- create:%>&#160;</em>
-			<input type="text"<%=attr("name", cbid .. ".newzone") .. ifattr(not selected, "value", luci.http.formvalue(cbid .. ".newzone") or self.default)%> onfocus="document.getElementById('<%=cbid%>_new').checked=true" />
-		</div>
-	</li>
-	<% end %>
 </ul>
 
 <%+cbi/valuefooter%>

@@ -6,7 +6,7 @@ local fs = require "nixio.fs"
 
 m = Map("system", translate("Router Password"),
 	translate("Changes the administrator password for accessing the device"))
-
+m.apply_on_parse = true
 s = m:section(TypedSection, "_dummy", "")
 s.addremove = false
 s.anonymous = true
@@ -40,7 +40,7 @@ function m.parse(map)
 	Map.parse(map)
 end
 
-
+--[[
 if fs.access("/etc/config/dropbear") then
 
 m2 = Map("dropbear", translate("SSH Access"),
@@ -117,5 +117,5 @@ function keys.write(self, section, value)
 end
 
 end
-
+]]--
 return m, m2

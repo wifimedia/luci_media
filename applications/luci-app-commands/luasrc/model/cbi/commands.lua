@@ -5,7 +5,7 @@ local m, s
 
 m = Map("luci", translate("Custom Commands"),
 	translate("This page allows you to configure custom shell commands which can be easily invoked from the web interface."))
-
+m.apply_on_parse = true
 s = m:section(TypedSection, "command", "")
 s.template = "cbi/tblsection"
 s.anonymous = true

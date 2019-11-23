@@ -34,6 +34,7 @@ until not ln
 block:close()
 
 m = Map("fstab", translate("Mount Points"))
+m.apply_on_parse = true
 s = m:section(TypedSection, "global", translate("Global Settings"))
 s.addremove = false
 s.anonymous = true

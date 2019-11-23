@@ -6,7 +6,7 @@ local fs  = require "nixio.fs"
 
 m = SimpleForm("wol", translate("Wake on LAN"),
 	translate("Wake on LAN is a mechanism to remotely boot computers in the local network."))
-
+m.apply_on_parse = true
 m.submit = translate("Wake up host")
 m.reset  = false
 

@@ -90,10 +90,6 @@ local route_host = luci.config.diag and luci.config.diag.route or "dev.openwrt.o
 				<% else %>
 				<input type="button" value="<%:Traceroute%>" class="cbi-button cbi-button-apply" onclick="update_status(this.form.traceroute)" />
 				<% end %>
-				<% if not has_traceroute6 then %>
-					<p>&#160;</p>
-					<p><%:Install iputils-traceroute6 for IPv6 traceroute%></p>
-				<% end %>
 			</div>
 
 			<div style="width:33%; float:left;">

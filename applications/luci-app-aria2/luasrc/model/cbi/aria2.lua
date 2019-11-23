@@ -43,7 +43,7 @@ function ipkg_ver_lined(pkg)
 end
 
 m = Map("aria2", translate("Aria2"), translate("Aria2 is a multi-protocol &amp; multi-source download utility, here you can configure the settings."))
-
+m.apply_on_parse = true
 m:section(SimpleSection).template  = "aria2/overview_status"
 
 s = m:section(TypedSection, "aria2", translate("Aria2 Settings"))

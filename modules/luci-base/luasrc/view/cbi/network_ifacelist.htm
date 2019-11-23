@@ -65,25 +65,7 @@
 		</label>
 	</li>
 	<% end end %>
-	<% if not self.nocreate then %>
-	<li>
-		<input class="cbi-input-<%=self.widget or "radio"%>" data-update="click change"<%=
-			attr("type", self.widget or "radio") ..
-			attr("id", cbid .. "_custom") ..
-			attr("name", cbid) ..
-			attr("value", " ")
-		%> />
-		<%- if not self.widget or self.widget == "checkbox" or self.widget == "radio" then -%>
-			<label<%=attr("for", cbid .. "_custom")%>></label>
-		<%- end -%>
-		&#160;
-		<label<%=attr("for", cbid .. "_custom")%>>
-			<img title="<%:Custom Interface%>" style="width:16px; height:16px; vertical-align:middle" src="<%=resource%>/icons/ethernet_disabled.png" />
-			<%:Custom Interface%>:
-		</label>
-		<input type="text" style="width:50px" onfocus="document.getElementById('<%=cbid%>_custom').checked=true" onblur="var x=document.getElementById('<%=cbid%>_custom'); x.value=this.value; x.checked=true" />
-	</li>
-	<% end %>
+
 </ul>
 
 <%+cbi/valuefooter%>

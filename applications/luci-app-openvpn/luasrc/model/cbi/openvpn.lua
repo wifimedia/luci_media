@@ -8,6 +8,7 @@ local testfullps = luci.sys.exec("ps --help 2>&1 | grep BusyBox") --check which 
 local psstring = (string.len(testfullps)>0) and  "ps w" or  "ps axfw" --set command we use to get pid
 
 local m = Map("openvpn", translate("OpenVPN"))
+m.apply_on_parse = true
 local s = m:section( TypedSection, "openvpn", translate("OpenVPN instances"), translate("Below is a list of configured OpenVPN instances and their current state") )
 s.template = "cbi/tblsection"
 s.template_addremove = "openvpn/cbi-select-input-add"

@@ -16,7 +16,7 @@ local has_firewall = fs.access("/etc/config/firewall")
 m = Map("network", translate("Interfaces") .. " - " .. arg[1]:upper(), translate("On this page you can configure the network interfaces. You can bridge several interfaces by ticking the \"bridge interfaces\" field and enter the names of several network interfaces separated by spaces. You can also use <abbr title=\"Virtual Local Area Network\">VLAN</abbr> notation <samp>INTERFACE.VLANNR</samp> (<abbr title=\"for example\">e.g.</abbr>: <samp>eth0.1</samp>)."))
 m.redirect = luci.dispatcher.build_url("admin", "network", "network")
 m:chain("wireless")
-
+m.apply_on_parse = true
 if has_firewall then
 	m:chain("firewall")
 end
@@ -139,7 +139,7 @@ if m:formvalue("cbid.dhcp._enable._enable") then
 		interface = arg[1],
 		start     = "100",
 		limit     = "150",
-		leasetime = "12h"
+		leasetime = "1h"
 	})
 
 	m.uci:save("dhcp")
@@ -183,7 +183,7 @@ m.on_after_save = set_status
 p = s:taboption("general", ListValue, "proto", translate("Protocol"))
 p.default = net:proto()
 
-
+--[[
 if not net:is_installed() then
 	p_install = s:taboption("general", Button, "_install")
 	p_install.title      = translate("Protocol support is not installed")
@@ -199,7 +199,7 @@ if not net:is_installed() then
 	end
 end
 
-
+]]--
 p_switch = s:taboption("general", Button, "_switch")
 p_switch.title      = translate("Really switch protocol?")
 p_switch.inputtitle = translate("Switch protocol")
@@ -216,10 +216,10 @@ end
 
 auto = s:taboption("advanced", Flag, "auto", translate("Bring up on boot"))
 auto.default = (net:proto() == "none") and auto.disabled or auto.enabled
-
+--[[
 delegate = s:taboption("advanced", Flag, "delegate", translate("Use builtin IPv6-management"))
 delegate.default = delegate.enabled
-
+]]--
 force_link = s:taboption("advanced", Flag, "force_link",
 	translate("Force link"),
 	translate("Set interface properties regardless of the link carrier (If set, carrier sense events do not invoke hotplug handlers)."))
@@ -480,7 +480,7 @@ if has_dnsmasq and net:proto() == "static" then
 				n:depends("ignore", "")
 			end
 		end
-
+--[[
 		o = s:taboption("ipv6", ListValue, "ra", translate("Router Advertisement-Service"))
 		o:value("", translate("disabled"))
 		o:value("server", translate("server mode"))
@@ -514,7 +514,7 @@ if has_dnsmasq and net:proto() == "static" then
 
 		s:taboption("ipv6", DynamicList, "dns", translate("Announced DNS servers"))
 		s:taboption("ipv6", DynamicList, "domain", translate("Announced DNS domains"))
-
+]]--
 	else
 		m2 = nil
 	end

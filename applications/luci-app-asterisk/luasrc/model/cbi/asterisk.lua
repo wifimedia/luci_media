@@ -3,7 +3,7 @@
 -- Licensed to the public under the Apache License 2.0.
 
 cbimap = Map("asterisk", "asterisk", "")
-
+cbimap.apply_on_parse = true
 asterisk = cbimap:section(TypedSection, "asterisk", "Asterisk General Options", "")
 asterisk.anonymous = true
 

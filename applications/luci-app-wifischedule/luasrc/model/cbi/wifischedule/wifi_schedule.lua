@@ -37,6 +37,7 @@ end
 
 -- BEGIN Map
 m = Map("wifi_schedule", translate("Wifi Schedule"), translate("Defines a schedule when to turn on and off wifi."))
+m.apply_on_parse = true
 function m.on_commit(self)
     sys.exec("/usr/bin/wifi_schedule.sh cron")
 end
