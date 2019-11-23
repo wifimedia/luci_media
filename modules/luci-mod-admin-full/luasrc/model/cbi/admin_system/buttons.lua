@@ -3,7 +3,7 @@
 
 m = Map("system", translate("Buttons"),
 	translate("This page allows the configuration of custom button actions"))
-m.apply_on_parse = true
+--m.apply_on_parse = true
 s = m:section(TypedSection, "button", "")
 s.anonymous = true
 s.addremove = true
