@@ -17,7 +17,7 @@ if not iw then
 end
 
 m = SimpleForm("network", translatef("Joining Network: %q", http.formvalue("join")))
-m.apply_on_parse = true
+--m.apply_on_parse = true
 m.cancel = translate("Back to scan results")
 m.reset = false
 

@@ -7,7 +7,7 @@ local utl = require "luci.util"
 local uci = require "luci.model.uci".cursor()
 
 m = SimpleForm("network", translate("Create Interface"))
-m.apply_on_parse = true
+--m.apply_on_parse = true
 m.redirect = luci.dispatcher.build_url("admin/network/network")
 m.reset = false
 

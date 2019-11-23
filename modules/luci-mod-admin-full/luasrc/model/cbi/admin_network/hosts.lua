@@ -5,7 +5,7 @@
 local ipc = require "luci.ip"
 
 m = Map("dhcp", translate("Hostnames"))
-m.apply_on_parse = true
+--m.apply_on_parse = true
 s = m:section(TypedSection, "domain", translate("Host entries"))
 s.addremove = true
 s.anonymous = true

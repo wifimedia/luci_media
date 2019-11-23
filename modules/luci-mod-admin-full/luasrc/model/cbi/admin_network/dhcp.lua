@@ -10,7 +10,7 @@ m = Map("dhcp", translate("DHCP and DNS"),
 		"\">DHCP</abbr>-Server and <abbr title=\"Domain Name System\">DNS</abbr>-" ..
 		"Forwarder for <abbr title=\"Network Address Translation\">NAT</abbr> " ..
 		"firewalls"))
-m.apply_on_parse = true
+--m.apply_on_parse = true
 s = m:section(TypedSection, "dnsmasq", translate("Server Settings"))
 s.anonymous = true
 s.addremove = false

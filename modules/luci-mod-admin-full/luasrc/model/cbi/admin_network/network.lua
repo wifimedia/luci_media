@@ -5,7 +5,7 @@
 local fs = require "nixio.fs"
 
 m = Map("network", translate("Interfaces"))
-m.apply_on_parse = true
+--m.apply_on_parse = true
 m.pageaction = false
 m:section(SimpleSection).template = "admin_network/iface_overview"
 

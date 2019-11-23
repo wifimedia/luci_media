@@ -9,7 +9,7 @@ local ipv6, maxwait, defaultroute, metric, peerdns, dns,
 
 
 mca = s:taboption("ahcp", Value, "multicast_address", translate("Multicast address"))
-m.apply_on_parse = true
+--m.apply_on_parse = true
 mca.optional    = true
 mca.placeholder = "ff02::cca6:c0f9:e182:5359"
 mca.datatype    = "ip6addr"

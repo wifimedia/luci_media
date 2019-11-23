@@ -10,7 +10,7 @@ local fs = require "nixio.fs"
 arg[1] = arg[1] or ""
 
 m = Map("wireless", "","")
-m.apply_on_parse = true
+--m.apply_on_parse = true
 m:chain("network")
 m:chain("firewall")
 m.redirect = luci.dispatcher.build_url("admin/network/wireless")
