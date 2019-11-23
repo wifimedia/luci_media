@@ -19,7 +19,7 @@ end
 
 m = Map("fstab", translate("Mount Points - Swap Entry"))
 m.redirect = luci.dispatcher.build_url("admin/system/fstab")
-
+m.apply_on_parse = true
 if not arg[1] or m.uci:get("fstab", arg[1]) ~= "swap" then
 	luci.http.redirect(m.redirect)
 	return

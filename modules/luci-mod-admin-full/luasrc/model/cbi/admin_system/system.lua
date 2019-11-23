@@ -11,6 +11,7 @@ local m, s, o
 local has_ntpd = fs.access("/usr/sbin/ntpd")
 
 m = Map("system", translate("System"), translate("Here you can configure the basic aspects of your device like its hostname or the timezone."))
+m.apply_on_parse = true
 m:chain("luci")
 
 

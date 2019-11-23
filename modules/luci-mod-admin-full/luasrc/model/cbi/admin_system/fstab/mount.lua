@@ -33,6 +33,7 @@ block:close()
 
 
 m = Map("fstab", translate("Mount Points - Mount Entry"))
+m.apply_on_parse = true
 m.redirect = luci.dispatcher.build_url("admin/system/fstab")
 
 if not arg[1] or m.uci:get("fstab", arg[1]) ~= "mount" then

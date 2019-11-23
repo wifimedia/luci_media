@@ -8,7 +8,7 @@ m = Map("network",
 	translate("Routes"),
 	translate("Routes specify over which interface and gateway a certain host or network " ..
 		"can be reached."))
-
+m.apply_on_parse = true
 s = m:section(TypedSection, "route", translate("Static IPv4 Routes"))
 s.addremove = true
 s.anonymous = true

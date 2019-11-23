@@ -11,7 +11,7 @@ end
 
 m = SimpleForm("luci", translate("Backup file list"))
 m:append(Template("admin_system/backupfiles"))
-
+m.apply_on_parse = true
 if luci.http.formvalue("display") ~= "list" then
 	f = m:section(SimpleSection, nil, translate("This is a list of shell glob patterns for matching files and directories to include during sysupgrade. Modified files in /etc/config/ and certain other configurations are automatically preserved."))
 
