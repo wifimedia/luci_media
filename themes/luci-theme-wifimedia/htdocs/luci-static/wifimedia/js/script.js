@@ -127,8 +127,8 @@
         mainNodeName = mainNodeName.replace(/[ \t\n\r\/]+/g, "_").toLowerCase();
         $("body").addClass(mainNodeName);
     }
-    $(".cbi-button-up").val("");
-    $(".cbi-button-down").val("");
+    $(".cbi-button-up").val("Move up");
+    $(".cbi-button-down").val("Move down");
 
 
     /**
