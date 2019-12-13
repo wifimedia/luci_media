@@ -105,7 +105,7 @@ function index()
 			uci:foreach("network", "interface",
 				function (section)
 					local ifc = section[".name"]
-					if ifc ~= "loopback" then
+					if ifc ~= "loopback"  and ifc ~= "local" and ifc ~= "hotspot" then
 						entry({"admin", "network", "network", ifc},
 						true, ifc:upper())
 					end
