@@ -11,7 +11,7 @@
 	local ifaces = { }
 	local netlist = { }
 	for _, net in ipairs(ntm:get_networks()) do
-		if net:name() ~= "loopback" then
+		if net:name() ~= "loopback" and net:name() ~= "local" and net:name() ~= "hotspot" then
 			local z = fwm:get_zone_by_network(net:name())
 			ifaces[#ifaces+1] = net:name()
 			netlist[#netlist+1] = {
