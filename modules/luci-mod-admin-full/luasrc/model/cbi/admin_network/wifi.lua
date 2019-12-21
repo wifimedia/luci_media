@@ -392,11 +392,11 @@ if hwtype == "mac80211" then
 			return mode
 		end
 	end
-	--[[
+
 	maxassoc = s:taboption("general", Value, "maxassoc", translate("Max Clients"))
 	maxassoc:depends({mode="ap"})
 	maxassoc:depends({mode="ap-wds"})
-	]]--
+	
 	hidden = s:taboption("general", Flag, "hidden", translate("Hide <abbr title=\"Extended Service Set Identifier\">ESSID</abbr>"))
 	hidden:depends({mode="ap"})
 	hidden:depends({mode="ap-wds"})
@@ -714,7 +714,7 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 	r0_key_lifetime.placeholder = "10000"
 	r0_key_lifetime.datatype = "uinteger"
 	r0_key_lifetime.rmempty = true
-]]--
+
 	r1_key_holder = s:taboption("encryption", Value, "r1_key_holder",
 			translate("R1 Key Holder"),
 			translate("6-octet identifier as a hex string - no colons"))
@@ -722,7 +722,7 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 	r1_key_holder.placeholder = "00004f577274"
 	r1_key_holder.datatype = "and(hexstring,rangelength(12,12))"
 	r1_key_holder.rmempty = true
-
+]]--
 	pmk_r1_push = s:taboption("encryption", Flag, "pmk_r1_push", translate("PMK R1 Push"))
 	pmk_r1_push:depends({ieee80211r="1", ft_psk_generate_local=""})
 	pmk_r1_push.placeholder = "0"
