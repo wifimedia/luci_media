@@ -910,7 +910,7 @@ return L.view.extend({
 					    bssid = ss.children[5],
 					    encr;
 
-					mode.value('mesh', '802.11s');
+					mode.value('mesh', 'Mesh');
 					mode.value('ahdemo', _('Pseudo Ad-Hoc (ahdemo)'));
 					mode.value('monitor', _('Monitor'));
 
