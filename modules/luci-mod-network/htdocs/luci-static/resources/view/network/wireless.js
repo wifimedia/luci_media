@@ -1345,6 +1345,7 @@ return L.view.extend({
 				if (hwtype == 'mac80211') {
 					
 					//For 802.11i support
+					
 					ieee80211i = s:taboption("encryption", form.Flag, 'rsn_preauth', _('Fast Roaming OKC'));
 					--ieee80211i:depends({rsn_preauth:'1', ieee80211r:''});
 					ieee80211i.rmempty = false;
