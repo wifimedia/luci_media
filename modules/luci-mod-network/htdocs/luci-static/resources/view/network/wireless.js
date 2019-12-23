@@ -1350,14 +1350,14 @@ return L.view.extend({
 					if (has_80211r) {
 						o.depends({ mode: 'ap', encryption: 'psk' });
 						o.depends({ mode: 'ap', encryption: 'psk2' });
-						o.depends({ mode: 'ap', encryption: 'psk-mixed' });
+						//o.depends({ mode: 'ap', encryption: 'psk-mixed' });
 						o.depends({ mode: 'ap', encryption: 'sae' });
-						o.depends({ mode: 'ap', encryption: 'sae-mixed' });
+						//o.depends({ mode: 'ap', encryption: 'sae-mixed' });
 						o.depends({ mode: 'ap-wds', encryption: 'psk' });
 						o.depends({ mode: 'ap-wds', encryption: 'psk2' });
-						o.depends({ mode: 'ap-wds', encryption: 'psk-mixed' });
+						//o.depends({ mode: 'ap-wds', encryption: 'psk-mixed' });
 						o.depends({ mode: 'ap-wds', encryption: 'sae' });
-						o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
+						//o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
 					}
 					o.rmempty = true;
 
@@ -1409,11 +1409,11 @@ return L.view.extend({
 					o.placeholder = '0';
 					o.rmempty = true;
 
-					o = ss.taboption('encryption', form.DynamicList, 'r0kh', _('External R0 Key Holder List'), _('List of R0KHs in the same Mobility Domain. <br />Format: MAC-address,NAS-Identifier,128-bit key as hex string. <br />This list is used to map R0KH-ID (NAS Identifier) to a destination MAC address when requesting PMK-R1 key from the R0KH that the STA used during the Initial Mobility Domain Association.'));
+					o = ss.taboption('encryption', form.DynamicList, 'r0kh', _('External R0 Key Holder List'), _('List of R0KHs in the same Mobility Domain. <br />'));
 					o.depends({ ieee80211r: '1' });
 					o.rmempty = true;
 
-					o = ss.taboption('encryption', form.DynamicList, 'r1kh', _('External R1 Key Holder List'), _ ('List of R1KHs in the same Mobility Domain. <br />Format: MAC-address,R1KH-ID as 6 octets with colons,128-bit key as hex string. <br />This list is used to map R1KH-ID to a destination MAC address when sending PMK-R1 key from the R0KH. This is also the list of authorized R1KHs in the MD that can request PMK-R1 keys.'));
+					o = ss.taboption('encryption', form.DynamicList, 'r1kh', _('External R1 Key Holder List'), _ ('List of R1KHs in the same Mobility Domain. <br />'));
 					o.depends({ ieee80211r: '1' });
 					o.rmempty = true;
 					// End of 802.11r options
@@ -1565,7 +1565,7 @@ return L.view.extend({
 					if (hwtype == 'mac80211') {
 						// ieee802.11w options
 						if (L.hasSystemFeature('hostapd', '11w')) {
-							o = ss.taboption('encryption', form.ListValue, 'ieee80211w', _('802.11w Management Frame Protection'), _("Requires the 'full' version of wpad/hostapd and support from the wifi driver <br />(as of Jan 2019: ath9k, ath10k, mwlwifi and mt76)"));
+							o = ss.taboption('encryption', form.ListValue, 'ieee80211w', _('802.11w Management Frame Protection'));
 							o.value('', _('Disabled'));
 							o.value('1', _('Optional'));
 							o.value('2', _('Required'));
