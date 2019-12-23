@@ -1368,7 +1368,7 @@ return L.view.extend({
 					o.depends({ mode: 'ap-wds', encryption: 'wpa2' });
 					o.depends({ ieee80211r: '1' });
 					o.rmempty = true;
-
+					/*
 					o = ss.taboption('encryption', form.Value, 'mobility_domain', _('Mobility Domain'), _('4-character hexadecimal ID'));
 					o.depends({ ieee80211r: '1' });
 					o.placeholder = '4f57';
@@ -1380,7 +1380,7 @@ return L.view.extend({
 					o.placeholder = '1000';
 					o.datatype = 'range(1000,65535)';
 					o.rmempty = true;
-
+					*/
 					o = ss.taboption('encryption', form.ListValue, 'ft_over_ds', _('FT protocol'));
 					o.depends({ ieee80211r: '1' });
 					o.value('1', _('FT over DS'));
@@ -1391,7 +1391,7 @@ return L.view.extend({
 					o.depends({ ieee80211r: '1' });
 					o.default = o.enabled;
 					o.rmempty = false;
-
+					/*
 					o = ss.taboption('encryption', form.Value, 'r0_key_lifetime', _('R0 Key Lifetime'), _('minutes'));
 					o.depends({ ieee80211r: '1' });
 					o.placeholder = '10000';
@@ -1403,7 +1403,7 @@ return L.view.extend({
 					o.placeholder = '00004f577274';
 					o.datatype = 'and(hexstring,length(12))';
 					o.rmempty = true;
-
+					*/	
 					o = ss.taboption('encryption', form.Flag, 'pmk_r1_push', _('PMK R1 Push'));
 					o.depends({ ieee80211r: '1' });
 					o.placeholder = '0';
