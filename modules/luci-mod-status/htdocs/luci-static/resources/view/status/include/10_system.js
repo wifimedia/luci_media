@@ -52,9 +52,9 @@ return L.Class.extend({
 		var fields = [
 			_('Hostname'),         boardinfo.hostname,
 			_('Model'),            boardinfo.model,
-			_('Architecture'),     boardinfo.system,
+			//_('Architecture'),     boardinfo.system,
 			_('Firmware Version'), (L.isObject(boardinfo.release) ? boardinfo.release.description + ' / ' : '') + (luciversion || ''),
-			_('Kernel Version'),   boardinfo.kernel,
+			//_('Kernel Version'),   boardinfo.kernel,
 			_('Local Time'),       datestr,
 			_('Uptime'),           systeminfo.uptime ? '%t'.format(systeminfo.uptime) : null,
 			_('Load Average'),     Array.isArray(systeminfo.load) ? '%.2f, %.2f, %.2f'.format(
