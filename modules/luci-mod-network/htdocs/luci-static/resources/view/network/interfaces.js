@@ -82,7 +82,7 @@ function render_status(node, ifc, with_device) {
 		_('IPv4'),     ipaddrs[2],
 		_('IPv4'),     ipaddrs[3],
 		_('IPv4'),     ipaddrs[4],
-		_('IPv6'),     ip6addrs[0],
+		/*_('IPv6'),     ip6addrs[0],
 		_('IPv6'),     ip6addrs[1],
 		_('IPv6'),     ip6addrs[2],
 		_('IPv6'),     ip6addrs[3],
@@ -92,7 +92,7 @@ function render_status(node, ifc, with_device) {
 		_('IPv6'),     ip6addrs[7],
 		_('IPv6'),     ip6addrs[8],
 		_('IPv6'),     ip6addrs[9],
-		_('IPv6-PD'),  changecount ? null : ifc.getIP6Prefix(),
+		_('IPv6-PD'),  changecount ? null : ifc.getIP6Prefix(),*/
 		_('Information'), with_device ? null : (ifc.get('auto') != '0' ? null : _('Not started on boot')),
 		_('Error'),    errors ? errors[0] : null,
 		_('Error'),    errors ? errors[1] : null,
@@ -546,7 +546,7 @@ return L.view.extend({
 
 					ss.tab('general',  _('General Setup'));
 					ss.tab('advanced', _('Advanced Settings'));
-					ss.tab('ipv6', _('IPv6 Settings'));
+					//ss.tab('ipv6', _('IPv6 Settings'));
 
 					ss.filter = function(section_id) {
 						return (uci.get('dhcp', section_id, 'interface') == ifc.getName());
@@ -564,7 +564,7 @@ return L.view.extend({
 										uci.set('dhcp', section_id, 'interface', section_id);
 										uci.set('dhcp', section_id, 'start', 100);
 										uci.set('dhcp', section_id, 'limit', 150);
-										uci.set('dhcp', section_id, 'leasetime', '12h');
+										uci.set('dhcp', section_id, 'leasetime', '1h');
 									});
 								}, ifc.getName())
 							}, _('Setup DHCP Server'))
@@ -616,7 +616,7 @@ return L.view.extend({
 					for (var i = 0; i < ss.children.length; i++)
 						if (ss.children[i].option != 'ignore')
 							ss.children[i].depends('ignore', '0');
-
+					/*
 					so = ss.taboption('ipv6', form.ListValue, 'ra', _('Router Advertisement-Service'));
 					so.value('', _('disabled'));
 					so.value('server', _('server mode'));
@@ -652,6 +652,7 @@ return L.view.extend({
 
 					ss.taboption('ipv6', form.DynamicList, 'dns', _('Announced DNS servers'));
 					ss.taboption('ipv6', form.DynamicList, 'domain', _('Announced DNS domains'));
+					*/
 				}
 
 				ifc.renderFormOptions(s);
@@ -841,9 +842,9 @@ return L.view.extend({
 			return node;
 		};
 
-		o = s.taboption('advanced', form.Flag, 'delegate', _('Use builtin IPv6-management'));
-		o.modalonly = true;
-		o.default = o.enabled;
+		//o = s.taboption('advanced', form.Flag, 'delegate', _('Use builtin IPv6-management'));
+		//o.modalonly = true;
+		//o.default = o.enabled;
 
 		o = s.taboption('advanced', form.Flag, 'force_link', _('Force link'), _('Set interface properties regardless of the link carrier (If set, carrier sense events do not invoke hotplug handlers).'));
 		o.modalonly = true;
@@ -854,8 +855,8 @@ return L.view.extend({
 			this.default = (protoval == 'static') ? this.enabled : this.disabled;
 			return this.super('render', [ option_index, section_id, in_table ]);
 		};
-
-
+		
+		/*
 		s = m.section(form.TypedSection, 'globals', _('Global network options'));
 		s.addremove = false;
 		s.anonymous = true;
@@ -909,7 +910,7 @@ return L.view.extend({
 				for (var i = -100; i <= 100; i += 5)
 					o.value(i, _('%.1f dB').format(i / 10));
 			}
-
+			*/
 			s.option(form.Value, 'firmware', _('Firmware File'));
 		}
 
