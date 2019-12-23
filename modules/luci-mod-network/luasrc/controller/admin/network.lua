@@ -21,7 +21,7 @@ function index()
 		page = entry({"admin", "network", "network"}, view("network/interfaces"), _("Interfaces"), 10)
 		page.leaf   = true
 		page.subindex = true
-
+		--[[
 		page = node("admin", "network", "dhcp")
 		page.uci_depends = { dhcp = true }
 		page.target = view("network/dhcp")
@@ -33,7 +33,7 @@ function index()
 		page.target = view("network/hosts")
 		page.title  = _("Hostnames")
 		page.order  = 40
-
+		]]--
 		page  = node("admin", "network", "routes")
 		page.target = view("network/routes")
 		page.title  = _("Static Routes")
