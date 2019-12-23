@@ -1339,6 +1339,20 @@ return L.view.extend({
 
 
 				if (hwtype == 'mac80211') {
+					
+					//For 802.11i support
+					ieee80211i = s:taboption("encryption", Flag, "rsn_preauth", "Fast Roaming OKC");
+					--ieee80211i:depends({rsn_preauth="1", ieee80211r=""});
+					ieee80211i.rmempty = false;
+					ieee80211i:depends({encryption:'wpa2'});
+					ieee80211i:depends({encryption:'psk2'});
+					ieee80211i:depends({encryption:'wpa-mixed'});
+					ieee80211i:depends({encryption:'psk-mixed'});
+					if (encryption == 'none')
+						ieee80211i.value('0');
+						return true;
+					//End 802.11i
+					
 					// Probe 802.11r support (and EAP support as a proxy for Openwrt)
 					var has_80211r = L.hasSystemFeature('hostapd', '11r') || L.hasSystemFeature('hostapd', 'eap');
 
@@ -1904,7 +1918,7 @@ return L.view.extend({
 			uci.add('wireless', 'wifi-iface', section_id);
 			uci.set('wireless', section_id, 'device', radioDev.getName());
 			uci.set('wireless', section_id, 'mode', 'ap');
-			uci.set('wireless', section_id, 'ssid', 'OpenWrt');
+			uci.set('wireless', section_id, 'ssid', 'WIFIMEDIA');
 			uci.set('wireless', section_id, 'encryption', 'none');
 
 			this.addedSection = section_id;
