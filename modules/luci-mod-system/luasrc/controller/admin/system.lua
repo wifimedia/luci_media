@@ -8,7 +8,7 @@ function index()
 	entry({"admin", "system", "system"}, view("system/system"), _("System"), 1)
 
 	entry({"admin", "system", "admin"}, firstchild(), _("Administration"), 2)
-	--entry({"admin", "system", "admin", "password"}, view("system/password"), _("Router Password"), 1)
+	entry({"admin", "system", "admin", "password"}, view("system/password"), _("Router Password"), 1)
 
 	--entry({"admin", "system", "admin", "dropbear"}, view("system/dropbear"), _("SSH Access"), 2)
 	--	.uci_depends = { dropbear = true }

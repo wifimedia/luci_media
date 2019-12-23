@@ -972,15 +972,14 @@ return L.view.extend({
 
 						return mode;
 					};
-
+					o = ss.taboption('general', form.Value, 'maxassoc', _('Max Clients'));
+					o.depends('mode','ap');
+					o.depends('mode','ap-wds');
+					
 					o = ss.taboption('general', form.Flag, 'hidden', _('Hide <abbr title="Extended Service Set Identifier">ESSID</abbr>'));
 					o.depends('mode', 'ap');
 					o.depends('mode', 'ap-wds');
 					
-					//o = ss.taboption('general', form.Value, 'maxassoc', _('Max Clients'));
-					//o.depends('mode':'ap')
-					//o.depends('mode':'ap-wds')
-
 					o = ss.taboption('general', form.Flag, 'wmm', _('WMM Mode'));
 					o.depends('mode', 'ap');
 					o.depends('mode', 'ap-wds');
@@ -1358,8 +1357,7 @@ return L.view.extend({
 					o.depends({ mode: 'ap-wds', encryption: 'psk-mixed' });
 					o.depends({ mode: 'ap-wds', encryption: 'sae' });
 					o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
-					o.depends({rsn_preauth:'1'});
-					o.depends({ ieee80211r: '' });					
+					o.depends({ rsn_preauth:'1'});				
 					//End 802.11i
 					
 					// Probe 802.11r support (and EAP support as a proxy for Openwrt)
@@ -1389,7 +1387,7 @@ return L.view.extend({
 					o.depends({ mode: 'ap', encryption: 'wpa2' });
 					o.depends({ mode: 'ap-wds', encryption: 'wpa' });
 					o.depends({ mode: 'ap-wds', encryption: 'wpa2' });
-					o.depends({ ieee80211r: '1' });
+					o.depends({ ieee80211r: '1'});
 					o.rmempty = true;
 					/*
 					o = ss.taboption('encryption', form.Value, 'mobility_domain', _('Mobility Domain'), _('4-character hexadecimal ID'));
@@ -1426,18 +1424,18 @@ return L.view.extend({
 					o.placeholder = '00004f577274';
 					o.datatype = 'and(hexstring,length(12))';
 					o.rmempty = true;
-					*/	
+					
 					o = ss.taboption('encryption', form.Flag, 'pmk_r1_push', _('PMK R1 Push'));
 					o.depends({ ieee80211r: '1' });
 					o.placeholder = '0';
 					o.rmempty = true;
-
+					*/	
 					o = ss.taboption('encryption', form.DynamicList, 'r0kh', _('External R0 Key Holder List'), _('List of R0KHs in the same Mobility Domain. <br />'));
-					o.depends({ ieee80211r: '1' });
+					o.depends({ ieee80211r: '1', ft_psk_generate_local: '0' });
 					o.rmempty = true;
 
 					o = ss.taboption('encryption', form.DynamicList, 'r1kh', _('External R1 Key Holder List'), _ ('List of R1KHs in the same Mobility Domain. <br />'));
-					o.depends({ ieee80211r: '1' });
+					o.depends({ ieee80211r: '1', ft_psk_generate_local: '0' });
 					o.rmempty = true;
 					// End of 802.11r options
 
