@@ -977,9 +977,9 @@ return L.view.extend({
 					o.depends('mode', 'ap');
 					o.depends('mode', 'ap-wds');
 					
-					o = ss.taboption('general', form.Value, "maxassoc", _('Max Clients'));
-					o.depends('mode':'ap')
-					o.depends('mode':'ap-wds')
+					//o = ss.taboption('general', form.Value, 'maxassoc', _('Max Clients'));
+					//o.depends('mode':'ap')
+					//o.depends('mode':'ap-wds')
 
 					o = ss.taboption('general', form.Flag, 'wmm', _('WMM Mode'));
 					o.depends('mode', 'ap');
@@ -1346,8 +1346,7 @@ return L.view.extend({
 					
 					//For 802.11i support
 					
-					o = ss.taboption("encryption", form.Flag, 'rsn_preauth', _('Fast Roaming OKC'));
-					o.depends({rsn_preauth:'1', ieee80211r:''});
+					o = ss.taboption('encryption', form.Flag, 'rsn_preauth', _('Fast Roaming OKC'));
 					o.rmempty = false;
 					o.depends({ mode: 'ap', encryption: 'psk' });
 					o.depends({ mode: 'ap', encryption: 'psk2' });
@@ -1359,6 +1358,8 @@ return L.view.extend({
 					o.depends({ mode: 'ap-wds', encryption: 'psk-mixed' });
 					o.depends({ mode: 'ap-wds', encryption: 'sae' });
 					o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
+					o.depends({rsn_preauth:'1'});
+					o.depends({ieee80211r:''});					
 					//End 802.11i
 					
 					// Probe 802.11r support (and EAP support as a proxy for Openwrt)
