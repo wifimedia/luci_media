@@ -977,9 +977,9 @@ return L.view.extend({
 					o.depends('mode', 'ap');
 					o.depends('mode', 'ap-wds');
 					
-					maxassoc = ss:taboption('general', form.Value, "maxassoc", _('Max Clients'));
-					maxassoc:depends('mode':'ap')
-					maxassoc:depends('mode':'ap-wds')
+					o = ss.taboption('general', form.Value, "maxassoc", _('Max Clients'));
+					o.depends('mode':'ap')
+					o.depends('mode':'ap-wds')
 
 					o = ss.taboption('general', form.Flag, 'wmm', _('WMM Mode'));
 					o.depends('mode', 'ap');
