@@ -169,7 +169,7 @@ body {
 
 html,
 body {
-	font-family: "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
+	font-family: "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
 	font-family: var(--font-body);
 	height: 100%;
 	margin: 0;
