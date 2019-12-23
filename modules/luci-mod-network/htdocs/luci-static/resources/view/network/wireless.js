@@ -1346,16 +1346,19 @@ return L.view.extend({
 					
 					//For 802.11i support
 					
-					ieee80211i = s:taboption("encryption", form.Flag, 'rsn_preauth', _('Fast Roaming OKC'));
-					--ieee80211i:depends({rsn_preauth:'1', ieee80211r:''});
-					ieee80211i.rmempty = false;
-					ieee80211i:depends({encryption:'wpa2'});
-					ieee80211i:depends({encryption:'psk2'});
-					ieee80211i:depends({encryption:'wpa-mixed'});
-					ieee80211i:depends({encryption:'psk-mixed'});
-					if (encryption == 'none')
-						ieee80211i.value('0');
-						return true;
+					o = ss.taboption("encryption", form.Flag, 'rsn_preauth', _('Fast Roaming OKC'));
+					o.depends({rsn_preauth:'1', ieee80211r:''});
+					o.rmempty = false;
+					o.depends({ mode: 'ap', encryption: 'psk' });
+					o.depends({ mode: 'ap', encryption: 'psk2' });
+					o.depends({ mode: 'ap', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap', encryption: 'sae' });
+					o.depends({ mode: 'ap', encryption: 'sae-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk2' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
 					//End 802.11i
 					
 					// Probe 802.11r support (and EAP support as a proxy for Openwrt)
@@ -1406,7 +1409,7 @@ return L.view.extend({
 					o.value('0', _('FT over the Air'));
 					o.rmempty = true;
 
-					o = ss.taboption('encryption', form.Flag, 'ft_psk_generate_local', _('Generate PMK locally'), _('When using a PSK, the PMK can be automatically generated. When enabled, the R0/R1 key options below are not applied. Disable this to use the R0 and R1 key options.'));
+					o = ss.taboption('encryption', form.Flag, 'ft_psk_generate_local', _('Generate PMK locally'), _('When using a PSK, the PMK can be automatically generated.'));
 					o.depends({ ieee80211r: '1' });
 					o.default = o.enabled;
 					o.rmempty = false;
