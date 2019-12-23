@@ -1359,7 +1359,7 @@ return L.view.extend({
 					o.depends({ mode: 'ap-wds', encryption: 'sae' });
 					o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
 					o.depends({rsn_preauth:'1'});
-					o.depends({ieee80211r:''});					
+					o.depends({ ieee80211r: '' });					
 					//End 802.11i
 					
 					// Probe 802.11r support (and EAP support as a proxy for Openwrt)
