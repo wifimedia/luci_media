@@ -1,4 +1,4 @@
-# OpenWrt luci feed
+# OpenWrt luci feed # OpenWrt luci feed TPLINK940NV6 TPLINK940NV6.0
 
 ## Description
 
