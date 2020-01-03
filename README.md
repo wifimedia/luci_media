@@ -1,4 +1,4 @@
-# OpenWrt luci feed
+# OpenWrt luci feed TPLINK 840NV6/841NV14, TPLINK940NV6.1 NEWIFI
 
 ## Description
 
