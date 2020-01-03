@@ -1,5 +1,5 @@
 # OpenWrt luci feed
-
+Support OpenWRT19.07.1-RC2
 [![Translation status](https://hosted.weblate.org/widgets/openwrt/-/svg-badge.svg)](https://hosted.weblate.org/engage/openwrt/?utm_source=widget)
 
 ## Description
