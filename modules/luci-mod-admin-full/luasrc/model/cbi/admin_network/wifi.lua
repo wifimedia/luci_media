@@ -648,22 +648,22 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 
 	-- Probe 802.11k support
 	ieee80211k = s:taboption("encryption", Flag, "ieee80211k", translate("802.11k"), translate("Enables The 802.11k standard provides information to discover the best available access point"))
-	ieee80211k:depends({mode="ap", encryption="wpa"})
+	--ieee80211k:depends({mode="ap", encryption="wpa"})
 	ieee80211k:depends({mode="ap", encryption="wpa2"})
-	ieee80211k:depends({mode="ap-wds", encryption="wpa"})
+	--ieee80211k:depends({mode="ap-wds", encryption="wpa"})
 	ieee80211k:depends({mode="ap-wds", encryption="wpa2"})
-	ieee80211k:depends({mode="ap", encryption="psk"})
+	--ieee80211k:depends({mode="ap", encryption="psk"})
 	ieee80211k:depends({mode="ap", encryption="psk2"})
 	ieee80211k:depends({mode="ap", encryption="psk-mixed"})
-	ieee80211k:depends({mode="ap-wds", encryption="psk"})
+	--ieee80211k:depends({mode="ap-wds", encryption="psk"})
 	ieee80211k:depends({mode="ap-wds", encryption="psk2"})
 	ieee80211k:depends({mode="ap-wds", encryption="psk-mixed"})
-	ieee80211k:depends({mode="ap", encryption="sae"})
+	--ieee80211k:depends({mode="ap", encryption="sae"})
 	ieee80211k:depends({mode="ap", encryption="sae-mixed"})
-	ieee80211k:depends({mode="ap-wds", encryption="sae"})
+	--ieee80211k:depends({mode="ap-wds", encryption="sae"})
 	ieee80211k:depends({mode="ap-wds", encryption="sae-mixed"})
 	ieee80211k.rmempty = true
-	
+	--[[
 	rrmneighborreport = s:taboption("encryption", Flag, "rrm_neighbor_report", translate("Enable neighbor report via radio measurements"))
 	rrmneighborreport.default = rrmneighborreport.enabled
 	rrmneighborreport:depends({ieee80211k="1"})
@@ -674,26 +674,26 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 	rrmbeaconreport:depends({ieee80211k="1"})
 	rrmbeaconreport.rmempty = true
 	-- End of 802.11k options
-
+	]]--
 	-- Probe 802.11v support
 	ieee80211v = s:taboption("encryption", Flag, "ieee80211v", translate("802.11v"), translate("Enables 802.11v allows client devices to exchange information about the network topology,tating overall improvement of the wireless network."))
-	ieee80211v:depends({mode="ap", encryption="wpa"})
+	--ieee80211v:depends({mode="ap", encryption="wpa"})
 	ieee80211v:depends({mode="ap", encryption="wpa2"})
-	ieee80211v:depends({mode="ap-wds", encryption="wpa"})
+	--ieee80211v:depends({mode="ap-wds", encryption="wpa"})
 	ieee80211v:depends({mode="ap-wds", encryption="wpa2"})
-	ieee80211v:depends({mode="ap", encryption="psk"})
+	--ieee80211v:depends({mode="ap", encryption="psk"})
 	ieee80211v:depends({mode="ap", encryption="psk2"})
 	ieee80211v:depends({mode="ap", encryption="psk-mixed"})
-	ieee80211v:depends({mode="ap-wds", encryption="psk"})
+	--ieee80211v:depends({mode="ap-wds", encryption="psk"})
 	ieee80211v:depends({mode="ap-wds", encryption="psk2"})
 	ieee80211v:depends({mode="ap-wds", encryption="psk-mixed"})
-	ieee80211v:depends({mode="ap", encryption="sae"})
+	--ieee80211v:depends({mode="ap", encryption="sae"})
 	ieee80211v:depends({mode="ap", encryption="sae-mixed"})
-	ieee80211v:depends({mode="ap-wds", encryption="sae"})
+	--ieee80211v:depends({mode="ap-wds", encryption="sae"})
 	ieee80211v:depends({mode="ap-wds", encryption="sae-mixed"})
 	ieee80211v.rmempty = true
 	
-
+--[[
 	wnmsleepmode = s:taboption("encryption", Flag, "wnm_sleep_mode", translate("extended sleep mode for stations"))
 	wnmsleepmode.default = wnmsleepmode.disabled
 	wnmsleepmode:depends({ieee80211v="1"})
@@ -716,7 +716,7 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 	time_zone.placeholder = "UTC8"
 	time_zone.rmempty = true
 	-- End of 802.11v options
-
+]]--
 	-- Probe 802.11r support (and EAP support as a proxy for Openwrt)
 	local has_80211r = (os.execute("hostapd -v11r 2>/dev/null || hostapd -veap 2>/dev/null") == 0)
 
@@ -724,15 +724,15 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 		translate("802.11r Fast Transition"),
 		translate("Enables fast roaming among access points that belong " ..
 			"to the same Mobility Domain"))
-	ieee80211r:depends({mode="ap", encryption="wpa"})
+	--ieee80211r:depends({mode="ap", encryption="wpa"})
 	ieee80211r:depends({mode="ap", encryption="wpa2"})
-	ieee80211r:depends({mode="ap-wds", encryption="wpa"})
+	--ieee80211r:depends({mode="ap-wds", encryption="wpa"})
 	ieee80211r:depends({mode="ap-wds", encryption="wpa2"})
 	if has_80211r then
-		ieee80211r:depends({mode="ap", encryption="psk"})
+		--ieee80211r:depends({mode="ap", encryption="psk"})
 		ieee80211r:depends({mode="ap", encryption="psk2"})
 		--ieee80211r:depends({mode="ap", encryption="psk-mixed"})
-		ieee80211r:depends({mode="ap-wds", encryption="psk"})
+		--ieee80211r:depends({mode="ap-wds", encryption="psk"})
 		ieee80211r:depends({mode="ap-wds", encryption="psk2"})
 		--ieee80211r:depends({mode="ap-wds", encryption="psk-mixed"})
 	end
