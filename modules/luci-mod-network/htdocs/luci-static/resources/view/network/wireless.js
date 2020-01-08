@@ -1343,6 +1343,8 @@ return L.view.extend({
 
 				if (hwtype == 'mac80211') {
 					
+					
+					
 					//For 802.11i support
 					
 					o = ss.taboption('encryption', form.Flag, 'rsn_preauth', _('Fast Roaming OKC'));
@@ -1359,6 +1361,28 @@ return L.view.extend({
 					o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
 					o.depends({ rsn_preauth:'1'});				
 					//End 802.11i
+					
+					//ieee80211k
+					o = ss.taboption('encryption', form.Flag, 'ieee80211k', _('802.11k'), _('Enables The 802.11k standard provides information to discover the best available access point'));
+					o.depends({mode='ap', encryption: 'wpa2'})
+					o.depends({mode='ap-wds', encryption: 'wpa2'})
+					o.depends({mode='ap', encryption: 'psk2'})
+					o.depends({mode='ap', encryption: 'psk-mixed'})
+					o.depends({mode='ap-wds', encryption: 'psk-mixed'})
+					o.depends({mode='ap', encryption: 'sae-mixed'})
+					o.depends({mode='ap-wds', encryption: 'sae-mixed'})
+					o.rmempty = true;
+					
+					//ieee80211v
+					o = ss.taboption('encryption', form.Flag, 'ieee80211v', _('802.11v'), _('Enables 802.11v allows client devices to exchange information about the network topology'));
+					o.depends({mode='ap', encryption: 'wpa2'})
+					o.depends({mode='ap-wds', encryption: 'wpa2'})
+					o.depends({mode='ap', encryption: 'psk2'})
+					o.depends({mode='ap', encryption: 'psk-mixed'})
+					o.depends({mode='ap-wds', encryption: 'psk-mixed'})
+					o.depends({mode='ap', encryption: 'sae-mixed'})
+					o.depends({mode='ap-wds', encryption: 'sae-mixed'})
+					o.rmempty = true;
 					
 					// Probe 802.11r support (and EAP support as a proxy for Openwrt)
 					var has_80211r = L.hasSystemFeature('hostapd', '11r') || L.hasSystemFeature('hostapd', 'eap');
