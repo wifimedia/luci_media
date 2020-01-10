@@ -23,6 +23,7 @@
 <ul style="margin:0; list-style-type:none; text-align:left">
 	<% for _, net in ipairs(networks) do
 	       if (net:name() ~= "loopback") and
+			 (net:name() ~= "local") and
 		      (net:name() ~= self.exclude) and
 		      (not self.novirtual or not net:is_virtual())
 		   then %>
