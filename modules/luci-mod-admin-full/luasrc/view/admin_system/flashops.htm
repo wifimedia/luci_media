@@ -9,13 +9,28 @@
 <h2 name="content"><%:Flash operations%></h2>
 
 <fieldset class="cbi-section">
-
 	<fieldset class="cbi-section">
-		<legend><%:Flash new firmware image%></legend>
+		<h3><%:Factory Reset %></h3>
+		<div class="cbi-section-node">
+			<% if reset_avail then %>
+			<form class="inline" method="post" action="<%=url('admin/system/flashops/reset')%>">
+				<input type="hidden" name="token" value="<%=token%>" />
+				<div class="cbi-value cbi-value-last">
+					<label class="cbi-value-title"><%:Reset to defaults%></label>
+					<div class="cbi-value-field">
+						<input onclick="return confirm('<%:Really reset all changes?%>')" class="cbi-button cbi-button-reset" type="submit" name="reset" value="<%:Perform reset%>" />
+					</div>
+				</div>
+			</form>
+			<% end %>	
+	</fieldset>
+	
+	<fieldset class="cbi-section">
+		<h3><%:Flash new firmware image%></h3>
 		<% if upgrade_avail then %>
 			<form method="post" action="<%=url('admin/system/flashops/sysupgrade')%>" enctype="multipart/form-data">
 				<input type="hidden" name="token" value="<%=token%>" />
-				<div class="cbi-section-descr"><%:Upload a sysupgrade-compatible image here to replace the running firmware. Check "Keep settings" to retain the current configuration (requires a compatible firmware image).%></div>
+				<div class="cbi-section-descr"><%:Check "Keep settings" to retain the current configuration (requires a compatible firmware image).%></div>
 				<div class="cbi-section-node">
 					<div class="cbi-value">
 						<label class="cbi-value-title" for="keep"><%:Keep settings%>:</label>
