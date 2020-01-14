@@ -31,7 +31,7 @@
 %>
                 </div>
                 <footer class="mobile-hide" style="text-align:center">
-                    <a href="https://wifimedia.vn"> WIFIMEIA.VN | APID:<%=luci.sys.exec("ifconfig eth0 | grep 'HWaddr' | awk '{ print $5 }' | sed 's/:/-/g' | tr a-z A-Z")%>
+                    <a href="https://wifimedia.vn"> WIFIMEIA.VN | APID:<%=luci.sys.exec("cat /sys/class/ieee80211/phy0/macaddress | sed 's/:/-/g' | tr a-z A-Z")%>
 						<br/><font color="red"><% if first_time then %>License:<%=luci.sys.exec("cat /etc/opt/license/status")%><% end %></font>
 					</a>
 
