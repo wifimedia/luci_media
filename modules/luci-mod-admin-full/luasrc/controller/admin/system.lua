@@ -360,7 +360,7 @@ function action_reset()
 		luci.template.render("admin_system/applyreboot", {
 			title = luci.i18n.translate("Erasing..."),
 			msg   = luci.i18n.translate("The system is erasing the configuration partition now and will reboot itself when finished."),
-			addr  = "192.168.1.1"
+			addr  = "172.16.99.1"
 		})
 
 		fork_exec("sleep 1; killall dropbear uhttpd; sleep 1; jffs2reset -y && reboot")
