@@ -273,6 +273,7 @@ mode:value("ap", translate("Access Point"))
 mode:value("sta", translate("Client"))
 mode:value("adhoc", translate("Ad-Hoc"))
 
+--[[
 meshid = s:taboption("general", Value, "mesh_id", translate("Mesh Id"))
 meshid:depends({mode="mesh"})
 
@@ -280,7 +281,7 @@ meshfwd = s:taboption("advanced", Flag, "mesh_fwding", translate("Forward mesh p
 meshfwd.rmempty = false
 meshfwd.default = "1"
 meshfwd:depends({mode="mesh"})
-
+]]--
 ssid = s:taboption("general", Value, "ssid", translate("<abbr title=\"Extended Service Set Identifier\">ESSID</abbr>"))
 ssid.datatype = "maxlength(32)"
 ssid:depends({mode="ap"})
