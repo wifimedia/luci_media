@@ -15,6 +15,7 @@ function index()
 	page.index  = true
 
 --	if page.inreq then
+	--[[
 		local has_switch = false
 
 		uci:foreach("network", "switch",
@@ -33,7 +34,7 @@ function index()
 			page.leaf = true
 		end
 
-
+	]]--
 		local has_wifi = false
 
 		uci:foreach("wireless", "wifi-device",
