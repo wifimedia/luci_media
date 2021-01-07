@@ -3,7 +3,7 @@
 #
 # This is free software, licensed under the Apache License, Version 2.0 .
 #
-
+#+luci-app-firewall 
 include $(TOPDIR)/rules.mk
 
 LUCI_TYPE:=col
@@ -12,7 +12,7 @@ LUCI_BASENAME:=luci
 LUCI_TITLE:=Standard OpenWrt set including full admin with ppp support and the default Bootstrap theme
 LUCI_DEPENDS:= \
 	+uhttpd +uhttpd-mod-ubus +luci-mod-admin-full \
-	+luci-app-firewall +libiwinfo-lua \
+	+libiwinfo-lua \
 	+rpcd-mod-rrdns
 
 PKG_LICENSE:=Apache-2.0
